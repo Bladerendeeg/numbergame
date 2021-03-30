@@ -1,0 +1,46 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="naam"></p>
+    <p id="getal"></p>
+    <button onclick="randomgetal()">Krijg getal</button>
+    <p id="willekeurig"></p>
+    <p id="uitkomst"></p>
+    <p id="uitkomst2"></p>
+</body>
+<script>
+    const hello = function () {
+        var person = prompt("Welkom! Wat is je naam?", "Voer hier je naam in");
+        if (person != null) {
+            document.getElementById("naam").innerHTML = "Hey " + person + "!";
+        }
+    };
+    const getalinvoeren = function () {
+        var invoergetal = prompt("Voer een nummer in van 0 tot 25 om te beginnen met raden...", "0-25");
+        if (invoergetal != null) {
+            document.getElementById("getal").innerHTML = invoergetal;
+        }
+    };
+    const randomgetal = function () {
+        var getalregen = Math.floor(Math.random() * 25 + 1);
+        document.getElementById("willekeurig").innerHTML = "Het getal is " + getalregen + "!";
+        if (randomgetal !== getalinvoeren) {
+            document.getElementById("uitkomst").innerHTML = "Dat is niet correct. Probeer het nog eens.";
+        }
+        else {
+            document.getElementById("uitkomst2").innerHTML = "Gefeliciteerd je hebt gewonnen.";
+        };
+    };
+    hello();
+    getalinvoeren();
+
+</script>
+
+</html>
